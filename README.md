@@ -1,4 +1,9 @@
 terraform-f5xc-frps
+
+In addition to the requirements below, the following environment variables are expected.
+
+VOLT_API_URL: the full url to the F5 Distributed Cloud tenant (e.g. https://tenant.console.ves.volterra.io/api)  
+KUBE_CONFIG_PATH: the full path to the kubernetes configuration file to be used by the helm resource.
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
