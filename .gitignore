@@ -1,0 +1,4 @@
+**/.terraform/*
+**/certs/*
+.terraform.lock.hcl
+terraform.tfstate*
