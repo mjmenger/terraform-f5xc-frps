@@ -17,11 +17,11 @@ terraform {
 
 provider "volterra" {
   # Configuration options
-  url = "https://f5-bd.console.ves.volterra.io/api"
+  # define the VOLT_API_URL environment variable before using this provider
 }
 
 provider "helm" {
   kubernetes {
-    config_path = "${path.module}/kubeconfig.yaml"
+    # define the KUBE_CONFIG_PATH environment variable before using this provider
   }
 }
