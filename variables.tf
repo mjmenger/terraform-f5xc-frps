@@ -1,10 +1,10 @@
 variable frps_instance_name {
     type = string
-    description = "value used as prefix for all frp server deployment artifacts (e.g. myfrps)."
+    description = "the value used as prefix for all frp server deployment artifacts (e.g. myfrps)."
 }
 variable frps_namespace {
     type = string
-    description = "kubernetes namespace in which to deploy the frp server. (e.g. frps). While default is possible it is not recommended."
+    description = "the kubernetes namespace in which to deploy the frp server. (e.g. frps). While default is possible it is not recommended."
 }
 variable frps_create_namespace {
     type    = bool
@@ -60,5 +60,5 @@ variable frps_chart_name {
 variable frps_chart_version {
     type    = string
     default = "0.0.6"
-    description = "the version of the helm chart to use"
+    description = "he version of the helm chart to use"
 }
