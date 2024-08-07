@@ -42,11 +42,15 @@ No modules.
 | <a name="input_f5xc_dns_zone"></a> [f5xc\_dns\_zone](#input\_f5xc\_dns\_zone) | the previously configured dns zone to use when creating frp server load balancers. | `string` | n/a | yes |
 | <a name="input_f5xc_namespace"></a> [f5xc\_namespace](#input\_f5xc\_namespace) | the F5 Distributed Cloud namespace in which the frp server origin pools and load balancers are deployed. | `string` | n/a | yes |
 | <a name="input_f5xc_tenant_id"></a> [f5xc\_tenant\_id](#input\_f5xc\_tenant\_id) | the id of the F5 Distributed Cloud tenant. this is not the name of the tenant, but the id found user Account -> Tenant Overview. | `string` | n/a | yes |
+| <a name="input_frpc_proxy_address"></a> [frpc\_proxy\_address](#input\_frpc\_proxy\_address) | the address used by the frp client to access the proxied application. | `string` | `"web"` | no |
+| <a name="input_frpc_proxy_name"></a> [frpc\_proxy\_name](#input\_frpc\_proxy\_name) | the name used by the frp client to identify an application proxy configuration. | `string` | `""` | no |
+| <a name="input_frpc_proxy_port"></a> [frpc\_proxy\_port](#input\_frpc\_proxy\_port) | the port used by the frp client to access the proxied application. | `number` | `5000` | no |
+| <a name="input_frpc_proxy_type"></a> [frpc\_proxy\_type](#input\_frpc\_proxy\_type) | the type of proxy used by an application proxy configuration. acceptable values are http, https, ... | `string` | `"http"` | no |
 | <a name="input_frps_app_name"></a> [frps\_app\_name](#input\_frps\_app\_name) | the name of the application proxied by the frp client. | `string` | n/a | yes |
 | <a name="input_frps_auth_token"></a> [frps\_auth\_token](#input\_frps\_auth\_token) | value of the token used by the frp server to authenticate frp clients. | `string` | n/a | yes |
 | <a name="input_frps_chart_name"></a> [frps\_chart\_name](#input\_frps\_chart\_name) | the name of the helm chart to use for the frp server deployment | `string` | `"f5xc-frps"` | no |
 | <a name="input_frps_chart_repository"></a> [frps\_chart\_repository](#input\_frps\_chart\_repository) | the url of the helm chart repository where the f5xc-frps chart is stored. | `string` | `"https://f5businessdevelopment.github.io/helm-charts"` | no |
-| <a name="input_frps_chart_version"></a> [frps\_chart\_version](#input\_frps\_chart\_version) | he version of the helm chart to use | `string` | `"0.0.6"` | no |
+| <a name="input_frps_chart_version"></a> [frps\_chart\_version](#input\_frps\_chart\_version) | the version of the helm chart to use | `string` | `"0.0.8"` | no |
 | <a name="input_frps_control_listener_port"></a> [frps\_control\_listener\_port](#input\_frps\_control\_listener\_port) | the port used by the frp server to listen for frp client requests. | `number` | n/a | yes |
 | <a name="input_frps_create_namespace"></a> [frps\_create\_namespace](#input\_frps\_create\_namespace) | if true, a kubernetes namespace will be created with the name set to frps\_namespace. | `bool` | `true` | no |
 | <a name="input_frps_http_listener_port"></a> [frps\_http\_listener\_port](#input\_frps\_http\_listener\_port) | the port used by the frp server to listen for http application end user requests. | `number` | n/a | yes |
