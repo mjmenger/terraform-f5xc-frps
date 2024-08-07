@@ -1,3 +1,20 @@
+locals {
+    frps_auth_token = var.frps_auth_token == "" ? random_string.authtoken[0].result : var.frps_auth_token
+}
+resource random_integer authtoken_length {
+    count = var.frps_auth_token == "" ? 1 : 0
+    min = 16
+    max = 32
+}
+resource "random_string" "authtoken" {
+    count            = var.frps_auth_token == "" ? 1 : 0
+    length           = random_integer.authtoken_length[0].result
+    special          = true
+    min_lower        = 1
+    min_upper        = 1
+    min_numeric      = 1
+    override_special = "+-.#$"
+}
 variable frps_instance_name {
     type        = string
     description = "the value used as prefix for all frp server deployment artifacts (e.g. myfrps)."
@@ -25,6 +42,7 @@ variable frps_https_listener_port {
 }
 variable frps_auth_token {
     type        = string
+    default     = ""
     description = "value of the token used by the frp server to authenticate frp clients."
 }
 variable frps_app_name {

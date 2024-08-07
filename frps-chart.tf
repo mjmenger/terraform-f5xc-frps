@@ -25,7 +25,7 @@ resource "helm_release" "frps" {
   }
   set {
     name  = "authToken"
-    value = var.frps_auth_token
+    value = local.frps_auth_token
   }
   set {
     name  = "frpsPublicAddress"
@@ -62,6 +62,3 @@ resource "helm_release" "frps" {
 
 }
 
-output helm_release_notes {
-  value = helm_release.frps.metadata[0].notes
-}
