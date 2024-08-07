@@ -25,7 +25,27 @@ resource "helm_release" "frps" {
   }
   set {
     name  = "authToken"
-    value = var.frps_auth_token 
+    value = var.frps_auth_token
+  }
+  set {
+    name  = "frpsPublicAddress"
+    value = format("%s.%s", var.frps_instance_name, var.f5xc_dns_zone )
+  }
+  set {
+    name  = "frpcProxyName"
+    value = var.frpc_proxy_name == "" ?  var.frpc_proxy_name  : format("%s.%s", var.frps_instance_name, var.f5xc_dns_zone )
+  }
+  set {
+    name  = "frpcProxyType"
+    value = var.frpc_proxy_type
+  }
+  set {
+    name  = "frpcProxyAddress"
+    value = var.frpc_proxy_address
+  }
+  set {
+    name  = "frpcProxyPort"
+    value = var.frpc_proxy_port
   }
   # set {
   #   name = "caCert"
