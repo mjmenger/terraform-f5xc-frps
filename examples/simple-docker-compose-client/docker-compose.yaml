@@ -1,0 +1,21 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:5000"
+  redis:
+    image: "redis:alpine"
+  frpc:
+    image: "ghcr.io/f5businessdevelopment/f5xc-frpc:v0.1.1"
+    environment:
+      FRP_SERVER_ADDR: myfrps.example.com 
+      FRP_SERVER_PORT: 9443 
+      FRP_AUTH_TOKEN: 12345BCDEF
+      FRP_PROXY_NAME: example_web_app
+      FRP_APP_ADDR: web
+      FRP_APP_PORT: 5000
+      FRP_PROXY_DOMAIN: myfrps-f5xc-frps.default
+
+
+
+

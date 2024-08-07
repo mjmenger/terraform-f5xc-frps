@@ -1,5 +1,8 @@
 terraform-f5xc-frps
 
+## Examples
+- [Simple Client with Docker Compose](examples/simple-docker-compose-client/)
+
 In addition to the requirements below, the following environment variables are expected.
 
 VOLT_API_URL: the full url to the F5 Distributed Cloud tenant (e.g. https://tenant.console.ves.volterra.io/api)  
